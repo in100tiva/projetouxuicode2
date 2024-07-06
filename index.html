@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDV System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de PDV</h1>
+        <div id="cart-icon">
+            <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+        </div>
+    </header>
+    <main>
+        <section id="product-form">
+            <h2>Adicionar Novo Produto</h2>
+            <form id="add-product-form">
+                <input type="text" id="product-name" placeholder="Nome do Produto" required>
+                <input type="number" id="product-price" placeholder="Preço do Produto" required>
+                <button type="submit"><i class="fas fa-plus"></i> Adicionar Produto</button>
+            </form>
+        </section>
+        <section id="product-menu">
+            <h2>Menu de Produtos</h2>
+            <div id="products-grid"></div>
+        </section>
+    </main>
+    <div id="cart-menu" class="hidden">
+        <h2>Carrinho</h2>
+        <ul id="cart-items"></ul>
+        <div id="cart-total">Total: R$0,00</div>
+        <button id="checkout"><i class="fas fa-check"></i> Finalizar Compra</button>
+        <div id="payment">
+            <label for="payment-method">Método de Pagamento:</label>
+            <select id="payment-method">
+                <option value="credit">Crédito</option>
+                <option value="debit">Débito</option>
+                <option value="pix">PIX</option>
+                <option value="cash">Dinheiro</option>
+            </select>
+            <div id="cash-options" class="hidden">
+                <input type="number" id="cash-received" placeholder="Dinheiro Recebido">
+                <button id="calculate-change"><i class="fas fa-calculator"></i> Calcular Troco</button>
+                <p id="change-amount"></p>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
